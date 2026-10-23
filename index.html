@@ -92,7 +92,7 @@ footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;colo
 <div class="hin">
 <span class="tag">NEW &middot; UNVEILED 15 OCTOBER 2026</span>
 <h1>ROADSTER</h1>
-<p>The next-generation Tesla Roadster. Reserve your place through Tesla Innovation Group, or choose from the Tesla range we buy, sell and run in fleets.</p>
+<p>The next-generation Tesla Roadster. Reserve your place through Tesla Innovation Group, we buy, sell and run in fleets.</p>
 <a class="btn" href="#preorder">Pre-order Roadster</a><a class="btn o" href="#lineup">Explore Cars</a>
 </div>
 </div>
@@ -142,7 +142,7 @@ footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;colo
 <div><b>Get your receipt</b><span>We confirm your place and send a receipt.</span></div>
 <div><b>Delivery</b><span>We update you as production and shipping progress toward 2028.</span></div>
 </div>
-<div class="note"><b>Please note:</b> Tesla Innovation Group is an independent company. Our pre-order is our own service. Deposit amount, refund terms and delivery timing are set by the company and depend on Tesla’s production. <a href="#order" onclick="pick('roadster')">Start my pre-order &rarr;</a></div>
+<div class="note"><b>Please note:</b> Tesla Innovation Group is an independent company. Our pre-order is our own service. <a href="#order" onclick="pick('roadster')">Start my pre-order &rarr;</a></div>
 </section>
 
 <section id="lineup">
@@ -224,7 +224,7 @@ function draw(){var o=O,t=paid?"RECEIPT":"INVOICE";document.getElementById("tg")
  +'<table><tr><th>Item</th><th class=r>Qty</th><th class=r>Unit price</th><th class=r>Amount</th></tr>'+rows+'</table>'
  +'<div class="tot"><div><span>Subtotal</span><span>'+m(o.sub)+'</span></div>'+(TAX?'<div><span>Tax ('+(TAX*100)+'%)</span><span>'+m(o.tax)+'</span></div>':'')+'<div class="g"><span>Total</span><span>'+m(o.tot)+'</span></div>'
  +'<div><span>'+(paid?"Amount received":"Amount due now")+'</span><span>'+m(o.now)+'</span></div><div><span>Balance</span><span>'+m(o.tot-(paid?o.now:0))+'</span></div></div>'
- +'<p><small>'+(o.pre?"Roadster pre-order deposit secures a place in the queue. Production is planned for 2028 and timing depends on Tesla. ":"")+(paid?"Thank you for your payment.":"Payment instructions: bank details to be added by the company.")+' Prices are samples for this demo.</small></p>'}
+ +'<p><small>'+(o.pre?"Roadster pre-order deposit secures a place in the queue. Production is planned for 2028 and timing depends on Tesla. ":"")+(paid?"Thank you for your payment.":"Payment instructions: bank details to be added by the company.")+'.</small></p>'}
 function wa(){if(!O)return;var s="Hello "+CO+", my "+(paid?"receipt":"invoice")+" "+O.no+":\n"+O.lines.map(function(l){return l[1]+" x "+l[0]}).join("\n")+"\nTotal: "+m(O.tot)+"\nName: "+O.name+"\nPhone: "+O.phone;location.href="mailto:"+EM+"?subject="+encodeURIComponent((paid?"Receipt ":"Invoice ")+O.no)+"&body="+encodeURIComponent(s)}
 var qi=document.getElementById("qurl"),def=location.href.indexOf("http")===0?location.href.split("#")[0]:"https://your-website-link";
 function dq(u){var b=document.getElementById("qrbox");b.innerHTML="";try{new QRCode(b,{text:u,width:180,height:180})}catch(e){b.textContent="QR unavailable"}}
